@@ -1,4 +1,5 @@
 function h3=grafica_robot(t1,t2)
+
     T01 = [cosd(t1) -sind(t1) 0   0;
            sind(t1)  cosd(t1) 0   0;
            0           0      1   0;
@@ -7,7 +8,9 @@ function h3=grafica_robot(t1,t2)
            0          1      0   0;
            0          0      1   0;
            0          0      0   1];
+    
     T01T12 = T01*T12;
+    
     p1 = T01(1:3,4);
     p2 = T01T12(1:3,4);
     %plot3([p1(1),p2(1)],[p1(2),p2(2)],[p1(3),p2(3)],'r','LineWidth',4);
@@ -21,6 +24,7 @@ function h3=grafica_robot(t1,t2)
            0          1        0   0;
            0          0        1   0;
            0          0        0   1];
+    
     T23T3P = T01*T12*T23*T3P;
     p3 = T23T3P(1:3,4);
     hold on;
